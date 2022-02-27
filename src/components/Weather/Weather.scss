@@ -1,0 +1,34 @@
+.forecast-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .daily-weather-icon {
+        flex-grow: 1;
+        width: 30%;
+        max-width: 300px;
+        min-height: 300px;
+    }
+
+    .daily-weather-description {
+        font-size: 18px;
+        flex-grow: 1;
+        width: 30%;
+        max-width: 300px;
+        min-height: 300px;
+    }
+
+    .hourly-weather {
+        flex-grow: 1;
+        width: 60%;
+        min-height: 300px;
+        max-width: 1040px;
+    }
+
+    .weekly-weather {
+        flex-grow: 1;
+        max-width: 1040px;
+        width: 60%;
+        min-height: 300px;
+    }
+
+}

@@ -1,0 +1,26 @@
+.search-form {
+
+  .search-form {
+    font-size: 18px;
+    padding: 15px;
+    margin-right: 20px;
+    width: 80%;
+    border: 2px solid #f9a236;
+    border-radius: 5px;
+  }
+
+  .error {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+  }
+
+  .search-submit {
+    border: none;
+    font-size: 18px;
+    color: #f9a236;
+    background-color: #1f1f1f;
+    padding: 17px 15px;
+    border-radius: 5px;
+  }
+}
