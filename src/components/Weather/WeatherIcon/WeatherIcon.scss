@@ -1,0 +1,30 @@
+.weather-icon-wrapper {
+    border-radius: 2rem;
+    padding: 5px 0 15px 0;
+
+    .weather-icon {
+        width: 100%;
+    }
+
+
+    .weather-icon-temperature {
+        font-size: 2em;
+        text-align: center;
+
+        .weather-icon-max, .weather-icon-min {
+            font-size: 1.5rem;
+            padding: 0 0 0 7px;
+        }
+
+        .weather-icon-min {
+            color: #797979;
+        }
+    }
+
+
+    .weather-icon-time {
+        margin-top: 5px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+}
