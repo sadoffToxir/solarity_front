@@ -7,7 +7,7 @@ let mode = 'development';
 let target = 'web';
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
-  target = 'browserslist';
+  target = 'browserslist\' / \'browserslist:env\' / \'browserslist:query\' / \'browserslist:path-to-config\' / \'browserslist:path-to-config:env';
 }
 
 const plugins = [
