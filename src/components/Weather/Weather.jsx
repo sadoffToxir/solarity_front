@@ -14,13 +14,10 @@ const Weather = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const cityWeather = useSelector((state) => state.weatherReducer.cityWeather)
-
-  let unixDateSunrise;
-  let unixDateSunset;
+  const params = queryString.parse(location.search.substr(1));
+  const cityWeatherForecast = useSelector((state) => state.weatherReducer.cityWeatherForecast)
 
   useEffect(() => {
-    const params = queryString.parse(location.search.substr(1))
     if (!Object.keys(params).length) {
       navigate('/search')
     } else {
@@ -28,35 +25,43 @@ const Weather = () => {
     }
   }, [])
 
-  if (cityWeather) {
-    unixDateSunrise = new Date(cityWeather.sys.sunrise * 1000)
-    unixDateSunset = new Date(cityWeather.sys.sunset * 1000)
-  }
-
   return (
     <Layout>
-      <h1>Weather</h1>
+      <h1>{params.city[0].toUpperCase() + params.city.slice(1)}</h1>
       <div className="forecast-wrapper">
         <div className='daily-weather-icon'>
           {
-            cityWeather &&
-            <WeatherIcon />
+            cityWeatherForecast &&
+            <WeatherIcon
+              icon={cityWeatherForecast.current.weather[0].icon}
+              temp={cityWeatherForecast.current.temp}
+              time={cityWeatherForecast.current.dt}
+              offset={cityWeatherForecast.timezone_offset}
+            />
           }
         </div>
         <div className='hourly-weather'>
-          <HourlyWeatherForecast/>
+          {
+            cityWeatherForecast &&
+            <HourlyWeatherForecast
+              weatherForecast={cityWeatherForecast}/>
+          }
         </div>
         <div className='daily-weather-description'>
-          <WeatherDescription />
-          <p>Temperature: {cityWeather && Math.round(cityWeather.main.temp - 273.15)}&#176;</p>
-          <p>Wind speed: {cityWeather && Math.round(cityWeather.wind.speed)}</p>
-          <p>Weather: {cityWeather && cityWeather.weather[0].description}</p>
-          <p>Humidity: {cityWeather && cityWeather.main.humidity}</p>
-          <p>Sunrise: {cityWeather && cityWeather.sys.sunrise}</p>
-          <p>Sunset: {cityWeather && cityWeather.sys.sunset}</p>
+          {
+            cityWeatherForecast &&
+            <WeatherDescription
+              weatherForecast={cityWeatherForecast}
+            />
+          }
         </div>
         <div className='weekly-weather'>
-          <WeeklyWeatherForecast />
+          {
+            cityWeatherForecast &&
+            <WeeklyWeatherForecast
+              weatherForecast={cityWeatherForecast}
+            />
+          }
         </div>
       </div>
     </Layout>
