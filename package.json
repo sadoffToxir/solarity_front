@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "ng build",
     "start": "cross-env SERVE=true webpack server",
     "build": "webpack",
     "build-prod": "webpack --mode==production",
