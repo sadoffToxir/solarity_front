@@ -47,7 +47,7 @@ const Main = () => {
                     meta,
                   }) => (
                   <>
-                    <input type="text" placeholder="Please type a city" {...field} className={'search-form'}/>
+                    <input type="text" placeholder="Please type a city" {...field} className={'search-input-form'}/>
                     {meta.touched && meta.error && (
                       <div className="error">{meta.error}</div>
                     )}
