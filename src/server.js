@@ -10,7 +10,7 @@ app.get("*", (req, res) => {
   res.sendFile('index.html', { root });
 })
 
-app.use('*', express.static(path.join(__dirname, '../dist')))
+app.use(express.static(path.join(__dirname, '../dist')))
 
 app.listen(port, () => console.log("Listening on Port", port))
 
