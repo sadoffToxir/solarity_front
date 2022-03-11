@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const fs = require('fs')
 const port = process.env.PORT || 8080
 
 
@@ -10,10 +9,6 @@ app.use(express.static(root));
 app.get("*", (req, res) => {
   res.sendFile('index.html', { root });
 })
-
-
-const folderPath = './dist'
-console.log(fs.readdirSync(folderPath))
 
 app.use('*', express.static(path.join(__dirname, '../dist')))
 
