@@ -17,6 +17,7 @@ const plugins = [
   new MiniCssExtractPlugin(),
 ];
 
+
 if (process.env.SERVE) {
   plugins.push(new ReactRefreshWebpackPlugin());
 }
