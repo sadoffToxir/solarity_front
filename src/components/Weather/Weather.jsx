@@ -19,7 +19,7 @@ const Weather = () => {
 
   useEffect(() => {
     if (!Object.keys(params).length) {
-      navigate('/search')
+      navigate('/')
     } else {
       dispatch({type: "LOAD_CITY_WEATHER", city: params.city});
     }

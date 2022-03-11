@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "ng build",
+    "server": "nodemon src/server.js",
     "start": "cross-env SERVE=true webpack server",
+    "startProject": "concurrently \"npm run start\" \"npm run server\"",
     "build": "webpack",
     "build-prod": "webpack --mode==production",
     "clean": "rd /s /q dist"
@@ -48,8 +49,10 @@
     "@reduxjs/toolkit": "^1.7.2",
     "axios": "^0.26.0",
     "browserslist": "^4.19.3",
+    "concurrently": "^7.0.0",
     "express": "^4.17.3",
     "formik": "^2.2.9",
+    "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
