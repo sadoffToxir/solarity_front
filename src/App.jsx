@@ -8,9 +8,8 @@ import Weather from "./components/Weather/Weather.jsx";
 const App = () => {
   return (
     <Routes>
-      <Route path='/search' exact element={<Main />}/>
       <Route path='/weather' exact element={<Weather />}/>
-      <Route path='/' exact element={<Navigate to={"/search"} />}/>
+      <Route path='/' exact element={<Main />}/>
       <Route path='*' element={<Page404/>}/>
     </Routes>
   )

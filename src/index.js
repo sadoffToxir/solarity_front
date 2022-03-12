@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import store from "./store/store";
 
 const AppContainer = () => {
+  console.log('hey')
   return <BrowserRouter>
     <Provider store={store}>
       <App/>
