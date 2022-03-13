@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const port = process.env.PORT || 8080
 const fs = require("fs")
 
 const root = path.join(__dirname, '../', 'dist')
