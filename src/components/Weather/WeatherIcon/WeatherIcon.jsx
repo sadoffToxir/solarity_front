@@ -3,10 +3,11 @@ import './WeatherIcon.scss';
 import {dateFormatter} from "../../../utils/dateFormatter";
 
 const WeatherIcon = ({icon, temp, time, offset, type = 'default'}) => {
+
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const unixDate = new Date((time + offset) * 1000)
   const weatherDate = type === 'default' ? dateFormatter(unixDate) : days[unixDate.getDay()]
-  console.log(unixDate.getMonth())
+
   return (
     <div className={'weather-icon-wrapper'}>
       <div className={'weather-icon-time'}>
