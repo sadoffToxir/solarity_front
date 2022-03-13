@@ -4,9 +4,6 @@ import WeatherIcon from "../WeatherIcon/WeatherIcon.jsx";
 
 const WeeklyWeatherForecast = ({weatherForecast}) => {
 
-  console.log(weatherForecast)
-
-
   let hourlyRate = weatherForecast.daily.map((el) => {
     return <WeatherIcon
       key={el.dt}

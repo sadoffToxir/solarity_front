@@ -3,6 +3,7 @@ import './HourlyWeatherForecast.scss';
 import WeatherIcon from "../WeatherIcon/WeatherIcon.jsx";
 
 const HourlyWeatherForecast = ({weatherForecast}) => {
+
   let hourlySortedForecasts = [];
   for (let i = 0; i < weatherForecast.hourly.length; i+= 3) {
     hourlySortedForecasts.push(weatherForecast.hourly[i])
