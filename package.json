@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon src/app/server.js",
+    "server": "nodemon src/server.js",
     "start": "cross-env SERVE=true webpack server",
     "startProject": "concurrently \"npm run start\" \"npm run server\"",
     "build": "webpack",
